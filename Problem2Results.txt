@@ -1,0 +1,57 @@
+1 40 Problem 2/training.txt Problem 2/testing.txt
+Positive examples: 20
+Negative examples: 20
+[[ 0.9172325 -1.0189075]] [-1.0677624]
+False positives : 3
+False negatives : 7
+
+3 40 Problem 2/training.txt Problem 2/testing.txt
+Positive examples: 20
+Negative examples: 20
+[[ 0.9172325 -1.0189075]
+ [ 0.982345  -1.6001875]
+ [ 1.2433    -1.1020125]] [-1.0677624  -2.61418721 -1.27112756]
+False positives : 3
+False negatives : 6
+
+5 40 Problem 2/training.txt Problem 2/testing.txt
+Positive examples: 20
+Negative examples: 20
+[[ 0.9172325 -1.0189075]
+ [ 0.982345  -1.6001875]
+ [ 1.2433    -1.1020125]
+ [ 1.61557   -0.733815 ]
+ [ 0.5887775 -1.6070175]] [-1.0677624  -2.61418721 -1.27112756 -0.46590594 -3.2837224 ]
+False positives : 3
+False negatives : 6
+
+7 40 Problem 2/training.txt Problem 2/testing.txt
+Positive examples: 20
+Negative examples: 20
+[[ 0.9172325 -1.0189075]
+ [ 0.982345  -1.6001875]
+ [ 1.2433    -1.1020125]
+ [ 1.61557   -0.733815 ]
+ [ 0.5887775 -1.6070175]
+ [ 0.4557    -2.4860925]
+ [ 1.4627425 -1.05124  ]] [-1.0677624  -2.61418721 -1.27112756 -0.46590594 -3.2837224  -4.80657031
+ -0.80716149]
+False positives : 3
+False negatives : 6
+
+9 40 Problem 2/training.txt Problem 2/testing.txt
+Positive examples: 20
+Negative examples: 20
+[[ 0.9172325 -1.0189075]
+ [ 0.982345  -1.6001875]
+ [ 1.2433    -1.1020125]
+ [ 1.61557   -0.733815 ]
+ [ 0.5887775 -1.6070175]
+ [ 0.4557    -2.4860925]
+ [ 1.4627425 -1.05124  ]
+ [ 0.908895  -0.6729025]
+ [ 0.3838225 -2.23068  ]] [-1.0677624  -2.61418721 -1.27112756 -0.46590594 -3.2837224  -4.80657031
+ -0.80716149 -0.4265192  -4.4828134 ]
+False positives : 3
+False negatives : 6
+
