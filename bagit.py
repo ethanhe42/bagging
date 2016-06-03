@@ -62,19 +62,11 @@ class bagofbi:
             np.random.seed(0xE3A8)
         
         #bootstrap sample index matrix D, T by size
-        resampleCnt=0
-        while True:
-            idx=np.random.randint(0,high=self.p['ntr'],
-                size=(self.p['T'],self.p['size']))
-            all_label=self.p['Ytr'][idx]
-            if sum(all_label.sum(1)==0)==0 or\
-                    sum((~all_label).sum(1)==0)==0:
-                resampleCnt+=1
-                if resampleCnt>10:
-                    print "[Error] only one class, abort"
-                    exit()
-                # avoid all neg or all pos
-                break
+        idx=np.random.randint(0,high=self.p['ntr'],
+            size=(self.p['T'],self.p['size']))
+        # some sample sets may only have one class, deal with this at the end of bagging, for convinience of computing
+        # T by size mat
+        all_label=self.p['Ytr'][idx]
                 
         # bootstrap sample cube
         D=self.p['Xtr'][idx]
@@ -88,13 +80,22 @@ class bagofbi:
                 self.log+='\n'
 
         idx=np.dstack([all_label]*self.p['D'])
-        #positive centroids
+        #positive centroids,
         pos=(D*idx).mean(1)
         #negative centroids
         neg=(D*(~idx)).mean(1)
+        # for one class centroids will be 0, deal with this later
+
         # w matrix, b vector
         self.w=pos-neg
         self.b=(self.w*((pos+neg)/2)).sum(1)
+        
+        #deal with one class case
+        #All positive case: push b to -inf, 
+        self.b[(~all_label).sum(1)==0]=-np.inf
+        #All negative case: push b to +inf, so test examples will always be negative
+        self.b[all_label.sum(1)==0]=np.inf
+
         if self.debug:
             print self.w,self.b
 
