@@ -34,17 +34,22 @@ def parseArg():
     
 class bagofbi:
     log=''
-    result=None
     status=None
     show=dict()
     debug=False
 
     def __init__(self,initFunc):
         """
-        self.p stands for parameters, and data
-        initFunc is user defined, feed in parameters
-        dictionary, contains all parameters and data
-        designed according to caffe style
+        self.p: stands for parameters, it contains these:
+                T: number of classifiers
+                size: size of bootstrap sample sets
+                Xtr Xte: points,
+                Ytr Yte: labels
+                ntr nte: number of points
+                D: dimension
+        initFunc: user defined, feed in parameters
+                dictionary, contains all parameters and data
+                designed according to caffe style
         """
         self.p=initFunc()
         print "Positive examples:",str(sum(self.p['Yte']))
