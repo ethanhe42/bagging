@@ -52,6 +52,9 @@ class bagofbi:
                 designed according to caffe style
         """
         self.p=initFunc()
+        for i in self.p:
+            print self.p[i]
+
         print "Positive examples:",str(sum(self.p['Yte']))
         print "Negative examples:",str(self.p['nte']-sum(self.p['Yte']))
 
@@ -68,6 +71,8 @@ class bagofbi:
         #bootstrap sample index matrix D, T by size
         idx=np.random.randint(0,high=self.p['ntr'],
             size=(self.p['T'],self.p['size']))
+        if self.debug:
+            print idx
         # some sample sets may only have one class, deal with this at the end of bagging, for convinience of computing
         # T by size mat
         all_label=self.p['Ytr'][idx]

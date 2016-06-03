@@ -1,0 +1,58 @@
+True
+[[  0.   1.]
+ [  1.   0.]
+ [ -1.   0.]
+ [  0.  -1.]
+ [ 10.  11.]
+ [ 11.  10.]
+ [  9.  10.]
+ [ 10.   9.]]
+8
+[ True  True  True  True False False False False]
+2
+[[  0.   0.]
+ [ -1.  -2.]
+ [ 10.  10.]
+ [ 12.  13.]]
+3
+[ True  True False False]
+4
+5
+Positive examples: 2
+Negative examples: 2
+[[3 5 5 3 1]
+ [5 2 5 2 3]
+ [1 7 4 4 7]]
+[[-4.2 -4.4]
+ [-4.8 -4.2]
+ [-7.8 -8. ]] [-17.58 -17.58 -63.98]
+False positives : 0
+False negatives : 0
+
+Bootstrap sample set 1:
+0.0 -1.0 - True
+11.0 10.0 - False
+11.0 10.0 - False
+0.0 -1.0 - True
+1.0 0.0 - True
+
+Bootstrap sample set 2:
+11.0 10.0 - False
+-1.0 0.0 - True
+11.0 10.0 - False
+-1.0 0.0 - True
+0.0 -1.0 - True
+
+Bootstrap sample set 3:
+1.0 0.0 - True
+10.0 9.0 - False
+10.0 11.0 - False
+10.0 11.0 - False
+10.0 9.0 - False
+
+Classification:
+0.0 0.0 - True (correct)
+-1.0 -2.0 - True (correct)
+10.0 10.0 - False (correct)
+12.0 13.0 - False (correct)
+
