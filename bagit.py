@@ -52,8 +52,9 @@ class bagofbi:
                 designed according to caffe style
         """
         self.p=initFunc()
-        for i in self.p:
-            print self.p[i]
+        if self.debug:
+            for i in self.p:
+                print self.p[i]
 
         print "Positive examples:",str(sum(self.p['Yte']))
         print "Negative examples:",str(self.p['nte']-sum(self.p['Yte']))
@@ -139,6 +140,6 @@ class bagofbi:
 
 if __name__=="__main__":
     model=bagofbi(parseArg)
-    model.debug=True
+    model.debug=False
     model.bagging()
     model.predict()
