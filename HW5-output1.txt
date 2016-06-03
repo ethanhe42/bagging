@@ -140,11 +140,17 @@ Negative examples: 20
 [[51 37 11 61 18 65 60  4 21 61]
  [11 34 60 12  9 69 43 50 16 25]
  [11  4 63 14  9 58  0 76 51 48]]
-[[ 1.37266  1.45224]
- [ 0.08811  2.60863]
- [ 0.24516  1.65086]] [ 1.67006882  5.30796037  2.72619084]
-False positives : 11
-False negatives : 0
+pos [[ 0.15528     4.9029    ]
+ [-0.24315     5.57583333]
+ [ 0.261       4.95126   ]]
+neg [[-2.59004   1.99842 ]
+ [-0.585     1.842175]
+ [-0.22932   1.64954 ]]
+[[ 2.74532     2.90448   ]
+ [ 0.34185     3.73365833]
+ [ 0.49032     3.30172   ]] [  6.6802753   13.70660278  10.90476336]
+False positives : 4
+False negatives : 3
 
 Bootstrap sample set 1:
 0.9019 -1.8356 - False
@@ -187,8 +193,8 @@ Classification:
 0.0645 5.6003 - True (correct)
 -1.3615 5.3476 - True (correct)
 -0.1818 4.0605 - True (correct)
--0.0375 3.1037 - True (correct)
--2.128 3.8231 - True (correct)
+-0.0375 3.1037 - False (false negative)
+-2.128 3.8231 - False (false negative)
 -0.9905 3.827 - True (correct)
 -1.7254 5.2882 - True (correct)
 -1.5942 5.1102 - True (correct)
@@ -199,7 +205,7 @@ Classification:
 -0.4302 3.3727 - True (correct)
 0.1663 5.3763 - True (correct)
 -0.227 3.8511 - True (correct)
-2.0243 2.6405 - True (correct)
+2.0243 2.6405 - False (false negative)
 -0.51 3.6784 - True (correct)
 -0.6361 5.3179 - True (correct)
 0.138 4.2893 - True (correct)
@@ -211,16 +217,16 @@ Classification:
 -1.2884 -0.3712 - False (correct)
 -0.7578 -0.564 - False (correct)
 0.5551 -0.5568 - False (correct)
--3.8951 2.5907 - True (false positive)
--3.1609 3.4093 - True (false positive)
--3.9526 3.3173 - True (false positive)
+-3.8951 2.5907 - False (correct)
+-3.1609 3.4093 - False (correct)
+-3.9526 3.3173 - False (correct)
 -2.922 4.3244 - True (false positive)
--3.2132 2.8655 - True (false positive)
+-3.2132 2.8655 - False (correct)
 -4.1714 1.6147 - False (correct)
-3.3105 2.7505 - True (false positive)
-3.5037 2.1073 - True (false positive)
+3.3105 2.7505 - False (correct)
+3.5037 2.1073 - False (correct)
 4.9085 3.1222 - True (false positive)
 4.047 2.7731 - True (false positive)
 2.8375 3.6901 - True (false positive)
-3.5558 1.8797 - True (false positive)
+3.5558 1.8797 - False (correct)
 

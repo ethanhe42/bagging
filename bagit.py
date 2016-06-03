@@ -90,11 +90,13 @@ class bagofbi:
 
         idx=np.dstack([all_label]*self.p['D'])
         #positive centroids,
-        pos=(D*idx).mean(1)
+        pos=(D*idx).sum(1)/idx.sum(1)
         #negative centroids
-        neg=(D*(~idx)).mean(1)
+        neg=(D*(~idx)).sum(1)/(~idx).sum(1)
         # for one class centroids will be 0, deal with this later
-
+        if self.debug:
+            print 'pos',pos
+            print 'neg',neg
         # w matrix, b vector
         self.w=pos-neg
         self.b=(self.w*((pos+neg)/2)).sum(1)
